@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "node-bing-api": "^2.4.0"
+    "node-bing-api": "^2.4.0",
+    "request": "^2.71.0"
   },
   "devDependencies": {},
   "scripts": {

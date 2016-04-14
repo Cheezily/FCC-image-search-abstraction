@@ -2,11 +2,15 @@ var http = require('http');
 var url = require('url');
 
 //var localApiKey = require('./apikey').API_KEY();
-var API_KEY = process.env.API_KEY || localApiKey;
+//var API_KEY = process.env.API_KEY || localApiKey;
+
+var API_KEY = process.env.API_KEY
 var bing = require('node-bing-api')({ accKey: API_KEY });
 
 //var mongoConnection = require('./myMongoDB').connectURL();
-var MongoURL = process.env.MongoURL || mongoConnection;
+//var MongoURL = process.env.MongoURL || mongoConnection;
+
+var MongoURL = process.env.MongoURL
 var MongoClient = require('mongodb').MongoClient;
 
 

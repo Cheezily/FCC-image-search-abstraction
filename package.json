@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "mongodb": "^2.1.16",
     "node-bing-api": "^2.4.0",
     "request": "^2.71.0"
   },

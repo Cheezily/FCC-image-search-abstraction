@@ -1,10 +1,11 @@
 var http = require('http');
 var url = require('url');
 
-var API_KEY = process.env.API_KEY || require('./apikey').API_KEY();
-//var bing = require('node-bing-api')({ accKey: API_KEY });
+var localApiKey = require('./apikey').API_KEY();
+var API_KEY = process.env.API_KEY || localApiKey;
+var bing = require('node-bing-api')({ accKey: API_KEY });
 
-//var mongoConnection = require('./myMongoDB').connectURL();
+var mongoConnection = require('./myMongoDB').connectURL();
 var MongoURL = process.env.MongoURL || mongoConnection;
 var MongoClient = require('mongodb').MongoClient;
 
@@ -23,8 +24,19 @@ var server = http.createServer(function(req, res) {
   var passedInfo = url.parse(req.url).pathname;
   var query = url.parse(req.url, true).query;
 
+  if (passedInfo == '/') {
+    res.writeHeader(200, {"Content-Type": "text/html"});
+    res.end('<h2>Usage:</h2> ' +
+      "<h4>To conduct a search, add your term to the end of the following:</h4>" +
+      "<code>http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/</code>" +
+      "<p>Example: <code>http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/puppies</code>" +
+      " to search for images of puppies.</p>" +
+      "<h4>To see the last 10 searches performed, check out the following:</h4>" +
+      "<code>http://http://fcc-image-search-cheezily.herokuapp.com/api/latest</code>");
+
+
   //handles requests sent to the /api/imagesearch/ path
-  if (passedInfo.substring(0, 17) == "/api/imagesearch/") {
+  } else if (passedInfo.substring(0, 17) == "/api/imagesearch/") {
     var searchTerm = passedInfo.substring(17, passedInfo.length);
     console.log("term: " + searchTerm);
 

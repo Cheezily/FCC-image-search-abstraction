@@ -1,4 +1,4 @@
-## Image Search Abstraction Using Bing results
+## Image Search Abstraction Using Bing Results
 
 ### Usage:
 ##### To conduct a search, add your term to the end of the following:

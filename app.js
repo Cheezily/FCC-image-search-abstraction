@@ -99,7 +99,7 @@ var server = http.createServer(function(req, res) {
       if (err) {console.log(err);}
 
         //returns the last 10 terms, sorted by most recent
-        db.collection('terms').find({}, {_id: 0}).sort({'when': -1})
+        db.collection('terms').find({}, {_id: 0}).sort({'when': -1}).limit(10)
           .toArray(function(err, items) {
           for (item in items) {
             output.push(items[item]);

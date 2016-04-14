@@ -62,7 +62,7 @@ var server = http.createServer(function(req, res) {
     }
 
     //sends the image search request to Bing
-    bing.images('cats', {
+    bing.images(searchTerm, {
       top: 10 + offset,
       skip: offset,
     },

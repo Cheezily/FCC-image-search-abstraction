@@ -5,8 +5,9 @@
 ```
 http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/
 ```
-
-Example: `http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/puppies` to search for images of puppies.
+You can also add a query '?offset=xx' to skip a set number of results.
+Example: `http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/puppies?offset=22` to search
+for images of puppies and skip the first 22 results.
 ##### To see the last 10 searches performed, check out the following:
 ```
 http://http://fcc-image-search-cheezily.herokuapp.com/api/latest

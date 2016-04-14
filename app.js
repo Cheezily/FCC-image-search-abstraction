@@ -33,8 +33,9 @@ var server = http.createServer(function(req, res) {
     res.end('<h2>Usage:</h2> ' +
       "<h4>To conduct a search, add your term to the end of the following:</h4>" +
       "<code>http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/</code>" +
-      "<p>Example: <code>http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/puppies</code>" +
-      " to search for images of puppies.</p>" +
+      "<p>You can also add a query '?offset=xx' to skip a set number of results.</p>" +
+      "<p>Example: <code>http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/puppies?offset=22</code>" +
+      " to search for images of puppies and skip the first 22 results.</p>" +
       "<h4>To see the last 10 searches performed, check out the following:</h4>" +
       "<code>http://http://fcc-image-search-cheezily.herokuapp.com/api/latest</code>");
 

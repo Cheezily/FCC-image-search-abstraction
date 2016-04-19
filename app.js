@@ -37,7 +37,7 @@ var server = http.createServer(function(req, res) {
       "<p>Example: <code>http://fcc-image-search-cheezily.herokuapp.com/api/imagesearch/puppies?offset=22</code>" +
       " to search for images of puppies and skip the first 22 results.</p>" +
       "<h4>To see the last 10 searches performed, check out the following:</h4>" +
-      "<code>http://http://fcc-image-search-cheezily.herokuapp.com/api/latest</code>");
+      "<code>http://fcc-image-search-cheezily.herokuapp.com/api/latest</code>");
 
 
   //handles requests sent to the /api/imagesearch/ path
